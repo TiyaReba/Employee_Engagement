@@ -19,7 +19,7 @@ const AddStudents = (props) => {
         console.log("clicked")
         console.log(inputs);
         if (props.method === "post")
-            axios.post("",inputs) //add link here
+            axios.post("add the api link here",inputs) 
             .then((response)=>{
                 console.log("post data"+response.data)
                 alert("success")
@@ -29,7 +29,7 @@ const AddStudents = (props) => {
             })
         
         if(props.method === "put")
-        axios.put(""+inputs.id,inputs) //add link here
+        axios.put("add the api link here"+inputs.id,inputs) 
         .then((response)=>{
             console.log("put data"+response.data)
             alert("success")

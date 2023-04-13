@@ -24,7 +24,7 @@ const ViewStudents = () => {
     var [singleValue,setSingleValue]=useState([]) 
     var [students,setStudents] = useState([])
     useEffect(()=>{
-        axios.get("") //add the api link here
+        axios.get("add the api link here") 
         .then(response=>{
             setStudents(students=response.data)
             console.log(students)
@@ -38,7 +38,7 @@ const ViewStudents = () => {
        }
        const deleteValues = (id)=>{
         console.log("delete clicked"+ id)
-        axios.delete(""+id) //add link here
+        axios.delete("add the api link here"+id) 
         .then((response)=>{
             console.log(response.idvalue);
             alert("sucessfully deleted");
