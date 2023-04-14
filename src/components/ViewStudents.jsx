@@ -14,7 +14,7 @@ const ViewStudents = () => {
         tableHeaderCell: {
           fontWeight: 'bold',
           fontSize:'20px',
-          backgroundColor: '#757de8',
+          backgroundColor: '#b39ddb',
         },
         tableBodyRow: {
           '&:nth-of-type(even)': {
