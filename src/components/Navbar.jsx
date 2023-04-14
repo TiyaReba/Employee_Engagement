@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div>
-        <AppBar  position="static" style={{ backgroundColor: '#87CEFA' }}>
+        <AppBar  position="static" style={{ backgroundColor: '#3f51b5' }}>
             <Toolbar>
             <Typography align='left' variant="h4"  sx={{ flexGrow: 1 }}>
           StudentApp

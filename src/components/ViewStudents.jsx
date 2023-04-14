@@ -1,7 +1,9 @@
-import { TableCell,Paper, Table,TableContainer, TableHead, TableRow, Typography, TableBody, Button } from '@mui/material'
+import { TableCell,Paper, Table,TableContainer, TableHead, TableRow, Typography, TableBody, Button, Box } from '@mui/material'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import AddStudents from './AddStudents'
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';    
 
 const ViewStudents = () => {
     const styles = {
@@ -12,7 +14,7 @@ const ViewStudents = () => {
         tableHeaderCell: {
           fontWeight: 'bold',
           fontSize:'20px',
-          backgroundColor: '#ccc',
+          backgroundColor: '#757de8',
         },
         tableBodyRow: {
           '&:nth-of-type(even)': {
@@ -45,7 +47,8 @@ const ViewStudents = () => {
             window.location.reload(false);
         })
        }   
-    var  finalJSX =   <TableContainer component={Paper}>
+    var  finalJSX =   <Box mt={2}ml={6} mr={6}>
+       <TableContainer component={Paper}>
     <Table style={styles.table}>
         <TableHead>
             <TableRow>
@@ -53,8 +56,7 @@ const ViewStudents = () => {
                 <TableCell style={styles.tableHeaderCell}>ID</TableCell>
                 <TableCell style={styles.tableHeaderCell}>NAME</TableCell>
                 <TableCell style={styles.tableHeaderCell}>GRADE</TableCell>
-                <TableCell style={styles.tableHeaderCell}>UPDATE</TableCell>
-                <TableCell style={styles.tableHeaderCell}>DELETE</TableCell>
+                <TableCell style={styles.tableHeaderCell}>ACTION</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
@@ -64,18 +66,10 @@ const ViewStudents = () => {
                     <TableCell>{value.name}</TableCell>
                     <TableCell>{value.grade}</TableCell>
                     <TableCell>
-                        <Button variant='outlined'
-                        color='success'
-                            onClick={()=>updateValue(value)}>
-                            Update
-                            </Button>
-                    </TableCell>
-                   <TableCell>
-                        <Button 
-                            variant='outlined' 
-                            color ='error' 
-                            onClick={()=>deleteValues(value.id)}>
-                        Delete</Button>
+                        <EditIcon 
+                            onClick={()=>updateValue(value)}/>
+                        <DeleteIcon 
+                            onClick={()=>deleteValues(value.id)}/>
                     </TableCell>
                     
                 </TableRow>
@@ -85,6 +79,7 @@ const ViewStudents = () => {
      
     </Table>
 </TableContainer>
+</Box>
 
    if (update)
    finalJSX = <AddStudents data={singleValue} method="put"/>
